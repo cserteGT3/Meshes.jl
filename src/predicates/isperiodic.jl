@@ -32,6 +32,8 @@ isperiodic(::Type{<:Circle}) = (true,)
 
 isperiodic(::Type{<:Torus}) = (true, true)
 
+isperiodic(::Type{<:FrustumSurface}) = (true, false)
+
 isperiodic(c::Type{<:Chain}) = (isclosed(c),)
 
 isperiodic(::Type{<:Quadrangle}) = (false, false)
