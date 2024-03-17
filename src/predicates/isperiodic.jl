@@ -36,6 +36,8 @@ isperiodic(::Type{<:Cone}) = (true, false, false)
 
 isperiodic(::Type{<:ConeSurface}) = (true, false)
 
+isperiodic(::Type{<:Frustum}) = (true, false, false)
+
 isperiodic(::Type{<:FrustumSurface}) = (true, false)
 
 isperiodic(c::Type{<:Chain}) = (isclosed(c),)
