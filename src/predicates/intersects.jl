@@ -93,7 +93,14 @@ function intersects(g₁::Geometry{Dim,T}, g₂::Geometry{Dim,T}) where {Dim,T}
 
   # move towards the origin
   d = O - P
+  i = 0
   while true
+    i += 1
+    if i > 9
+      # if stuck in infinite loop, then return true
+      println("sus")
+      return true
+    end
     P = minkowskipoint(g₁, g₂, d)
     if (P - O) ⋅ d < zero(T)
       return false
