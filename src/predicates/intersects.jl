@@ -96,7 +96,14 @@ function intersects(g₁::Geometry, g₂::Geometry)
 
   # move towards the origin
   d = O - P
+  i = 0
   while true
+    i += 1
+    if i > 9
+      # if stuck in infinite loop, then return true
+      println("sus")
+      return true
+    end
     P = minkowskipoint(g₁, g₂, d)
     if isnegative((P - O) ⋅ d)
       return false
