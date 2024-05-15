@@ -101,7 +101,7 @@ function intersects(g₁::Geometry, g₂::Geometry)
     i += 1
     if i > 9
       # if stuck in infinite loop, then return true
-      println("sus")
+      #println("sus")
       return true
     end
     P = minkowskipoint(g₁, g₂, d)
