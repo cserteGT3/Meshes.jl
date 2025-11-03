@@ -58,7 +58,13 @@ function _manualconnec(::Hexahedron)
 end
 
 function _manualconnec(::Pyramid)
-  [connect((1, 2, 4, 5), Tetrahedron), connect((3, 4, 2, 5), Tetrahedron)]
+  [
+    connect((1, 2, 5), Triangle),
+    connect((2, 3, 5), Triangle),
+    connect((3, 4, 5), Triangle),
+    connect((4, 1, 5), Triangle),
+    connect((1, 2, 3, 4), Quadrangle)
+  ]
 end
 
 function _manualconnec(::Wedge)
